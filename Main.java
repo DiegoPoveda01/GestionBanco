@@ -17,10 +17,12 @@ public class Main {
         Sucursal sucursal2 = new Sucursal(2, "Anibal Pinto 10", new ArrayList<>());
         CuentaAhorro cuentaAhorro1 = new CuentaAhorro("001", "01/01/2023", "150000", sucursal1, cliente1, 0.02);
         CuentaCorriente cuentaCorriente1 = new CuentaCorriente("002", "01/01/2023", "20000", sucursal2, cliente2, 500);
+        CuentaAhorro cuentaAhorro2 = new CuentaAhorro("100", "20/04/2020", "10000", sucursal1, cliente1, 0.03);
 
         // Agregar cuentas a las sucursales
         sucursal1.getCuentas().add(cuentaAhorro1);
         sucursal2.getCuentas().add(cuentaCorriente1);
+        sucursal1.getCuentas().add(cuentaAhorro2);
 
         // Crear una instancia de GestionBanco
         GestionBanco gestionBanco = new GestionBanco();
@@ -35,6 +37,7 @@ public class Main {
         gestionBanco.agregarCuentaBancariaACliente("Juan", cuentaAhorro1);
         gestionBanco.agregarCuentaBancariaACliente("Maria", cuentaCorriente1);
         gestionBanco.agregarCuentaBancariaACliente("Diego", cuentaAhorro1);
+        gestionBanco.agregarCuentaBancariaACliente("Diego", cuentaAhorro2);
 
         // Mostrar cuentas de un cliente
         gestionBanco.mostrarCuentasDeCliente("Juan");
